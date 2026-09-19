@@ -1,0 +1,7 @@
+[
+  {"a": "Sinh viên phải ghi nguồn khi sử dụng AI trong học thuật.", "b": "Sinh viên phải ghi nguồn khi sử dụng AI trong học thuật.", "prediction": "cao", "reason": "Hai câu giống hệt nhau; dự kiến cao nhất."},
+  {"a": "Sinh viên phải ghi nguồn khi sử dụng AI trong học thuật.", "b": "Người học cần trích dẫn công cụ trí tuệ nhân tạo đã dùng.", "prediction": "cao", "reason": "Gần nghĩa nhưng khác từ vựng; thử giới hạn lexical embedding."},
+  {"a": "Use AI responsibly and cite generated content.", "b": "Use AI responsibly and verify generated content.", "prediction": "cao", "reason": "Chung phần lớn từ và cùng chủ đề trách nhiệm sử dụng AI."},
+  {"a": "Students must cite AI-generated content.", "b": "Sinh viên phải trích dẫn nội dung do AI tạo ra.", "prediction": "cao", "reason": "Cùng nghĩa, khác ngôn ngữ; lexical baseline có thể thất bại."},
+  {"a": "Academic integrity requires honest citation.", "b": "The recipe uses rice and boiling water.", "prediction": "thấp", "reason": "Khác chủ đề; dự kiến thấp nhất."}
+]

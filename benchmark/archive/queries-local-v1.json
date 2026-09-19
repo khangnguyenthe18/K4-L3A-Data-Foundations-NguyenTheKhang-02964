@@ -1,0 +1,43 @@
+[
+  {
+    "id": "Q1",
+    "question": "Tại UEH, sau khi chỉnh sửa nhưng vẫn vi phạm sử dụng AI trong học thuật thì xử lý thế nào?",
+    "user_context": "Người hỏi là sinh viên; hỏi về bài tập học phần. Audience được truyền bằng metadata filter.",
+    "metadata_filter": {"audience": "student"},
+    "gold_answer": "Với người học, giảng viên phụ trách học phần lập biên bản, thông báo chuyển cho đơn vị quản lý để xử lý tùy theo mức độ vi phạm.",
+    "evidence": [{"doc_id": "ueh-xu-ly-vi-pham-nguoi-hoc", "quote": "Nếu vẫn vi phạm sau khi đã chỉnh sửa, giảng viên phụ trách học phần lập biên bản, thông báo chuyển cho đơn vị quản lý để xử lý tùy theo mức độ vi phạm."}],
+    "source_section": "Điều 5, mục 2.2(b), áp dụng cho bài tập học phần của người học."
+  },
+  {
+    "id": "Q2",
+    "question": "Theo UEH, tỷ lệ tương đồng học thuật có phải là căn cứ duy nhất để kết luận đạo văn không?",
+    "metadata_filter": null,
+    "gold_answer": "Không. Tỷ lệ tương đồng không phải căn cứ duy nhất; cần xem xét chuyên môn của đơn vị quản lý, giảng viên hoặc hội đồng có thẩm quyền.",
+    "evidence": [{"doc_id": "ueh-dao-van-ai-quy-dinh-chung", "quote": "Tỷ lệ tương đồng không phải là căn cứ duy nhất để kết luận đạo văn"}],
+    "source_section": "Điều 2, Tỷ lệ tương đồng học thuật."
+  },
+  {
+    "id": "Q3",
+    "question": "According to RMIT Library, what records of AI prompts and outputs should students save?",
+    "metadata_filter": {"audience": "student"},
+    "gold_answer": "Keep a record of prompts, generated outputs and how the content was used; save copies because an educator may request them.",
+    "evidence": [{"doc_id": "rmit-ai-acknowledgement-guide", "quote": "Make sure you save a copy of the prompts used and"}],
+    "source_section": "Overall guidelines for acknowledging the use of AI tools."
+  },
+  {
+    "id": "Q4",
+    "question": "At UNA, should faculty use AI-detection software as the single means of verifying originality?",
+    "metadata_filter": {"audience": "faculty"},
+    "gold_answer": "No. Faculty should avoid using AI-detection software as the single means of verifying originality.",
+    "evidence": [{"doc_id": "una-genai-policy-faculty", "quote": "Avoid using AI-detection software as the single means of verifying originality."}],
+    "source_section": "Faculty."
+  },
+  {
+    "id": "Q5",
+    "question": "At UNA, what information may staff not share with generative AI, and may they create AI-generated promotional images?",
+    "metadata_filter": {"audience": "staff"},
+    "gold_answer": "Staff must avoid sharing confidential information, including student data protected under FERPA. Creating AI-generated images for promotional materials is not allowed in the supplied policy.",
+    "evidence": [{"doc_id": "una-genai-policy-staff", "quote": "avoid sharing confidential information, including student data protected under FERPA"}, {"doc_id": "una-genai-policy-staff", "quote": "the creation of AI-generated images for promotional materials is not allowed"}],
+    "source_section": "Staff."
+  }
+]

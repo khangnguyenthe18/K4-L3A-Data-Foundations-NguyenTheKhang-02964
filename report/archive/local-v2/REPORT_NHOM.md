@@ -1,8 +1,8 @@
-# Báo cáo nhóm DKH — Quy định sử dụng AI và liêm chính học thuật
+# Báo cáo nhóm — Liêm chính khoa học
 
 **Thành viên:** Nguyễn Thế Khang, Đặng Quốc Hiệp, Nguyễn Việt Dũng
 
-**Lớp:** K4-L3A — **Phiên bản:** group-dkh-v3 — **Ngày:** 19/09/2026
+**Lớp:** K4-L3A — **Phiên bản:** group-hiep-v2 — **Ngày:** 19/09/2026
 
 ## 1. Bộ tài liệu và metadata
 
@@ -27,7 +27,7 @@ Schema: source_url, retrieved_at, document_version, audience; thêm department, 
 
 ## 2. Chiến lược và baseline
 
-Phân công DKH: Khang (2A202602964, R1 · Data) dùng fixed-size 500/100; Hiệp (2A202602755, R3 · Strategy) dùng heading 800; Dũng (2A202602812, R2 · Benchmark) dùng recursive 500 theo kế hoạch. Khang đã chạy đúng tham số fixed-size, thêm ba chunkers đối chứng. Log Dũng ghi recursive/177 chunks nhưng không ghi size thực chạy. Backend thực tế: Khang TF-IDF/extractive, Hiệp Gemini/Flash, Dũng OpenAI/GPT-4.1-mini. Chưa có bench.py gốc để xác minh shared-script compliance; không tạo lượt chạy giả.
+Khang chạy fixed-size 800/overlap80, sentence 3, recursive 800 và heading 800. Hiệp đã gửi log fixed-size 500/overlap100, recursive 500, heading custom max_chars800. Dũng chưa có kết quả theo xác nhận của Khang; không gán strategy hoặc số liệu như đã thực hiện.
 
 Heading giữ đường dẫn Điều/Mục trong mỗi đoạn con để dễ giải thích bằng chứng; prefix lặp tăng số chunks. Fixed-size đơn giản nhưng có thể cắt ngang câu; sentence giữ câu nhưng không khống chế cùng số ký tự; recursive ưu tiên separator, đôi khi tách phần dẫn khỏi danh sách bằng chứng.
 
@@ -45,22 +45,22 @@ Heading giữ đường dẫn Điều/Mục trong mỗi đoạn con để dễ g
 | tt49-2026-ung-dung-cong-nghe-ai | by_sentences | 25 | 503.5 |
 | tt49-2026-ung-dung-cong-nghe-ai | recursive | 19 | 665.4 |
 
-Comparator ở bảng baseline dùng fixed-size 800/overlap50; cấu hình cá nhân dùng 500/100. Đây là hai thí nghiệm khác nhau, không gộp số liệu.
+Comparator ở bảng này dùng fixed-size 800/overlap50 theo API; bảng toàn corpus dùng overlap80, đã ghi tách biệt trong cấu hình.
 
 ### So sánh có kiểm soát trong lượt local
 
 | Backend | Strategy | Chunks | Avg chars | Hit@3 | MRR@3 | Anchor /10 |
 | --- | --- | --- | --- | --- | --- | --- |
-| tfidf | fixed_size | 162 | 486.6 | 40% | 0.400 | 4 |
+| tfidf | fixed_size | 92 | 762.9 | 60% | 0.600 | 6 |
 | tfidf | by_sentences | 133 | 476.0 | 60% | 0.600 | 6 |
 | tfidf | recursive | 102 | 623.8 | 40% | 0.400 | 4 |
 | tfidf | heading | 145 | 542.8 | 60% | 0.500 | 5 |
-| mock | fixed_size | 162 | 486.6 | 20% | 0.100 | 1 |
+| mock | fixed_size | 92 | 762.9 | 0% | 0.000 | 0 |
 | mock | by_sentences | 133 | 476.0 | 0% | 0.000 | 0 |
 | mock | recursive | 102 | 623.8 | 0% | 0.000 | 0 |
 | mock | heading | 145 | 542.8 | 0% | 0.000 | 0 |
 
-TF-IDF fit một lần trên tài liệu gốc; không dùng gold/query để fit. So sánh bảng thực chạy phía trên, không suy ra heading luôn thắng. Fixed=500, recursive/heading=800, sentence=3 nên chưa cô lập thuật toán khỏi ngân sách ký tự.
+TF-IDF fit một lần trên tài liệu gốc, vocabulary/IDF cố định giữa chunkers; không fit trên gold/query. Trong v2 fixed-size, sentence và heading cùng Hit@3=60%, recursive=40%; fixed-size/sentence có MRR cao hơn heading. Vì vậy không khẳng định heading luôn tốt hơn về precision, chỉ chọn nó để trình bày cấu trúc evidence và trade-off.
 
 ## 3. Năm benchmark queries chung
 
@@ -76,30 +76,30 @@ TF-IDF fit một lần trên tài liệu gốc; không dùng gold/query để fi
 
 Primary marker + accepted doc_id xác định Hit@3 và MRR local; coverage đo mọi marker trong hợp top-3. Q4 cho phép UNA faculty/general. Anchor score không phải điểm rubric. Q5 phải đọc đủ ngày và cả hai văn bản, không chỉ thấy một marker. Mã chấm gốc của Hiệp chưa có, nên điểm của Hiệp giữ đúng như log, không tự chấm lại từ preview.
 
-## 4. So sánh thành viên và khác biệt cấu hình/query
+## 4. So sánh giữa các thành viên trên cùng câu hỏi
 
 | Thành viên/nguồn | Strategy | Backend | Chunks | Hit@3 | MRR@3 | Anchor/log content /10 |
 | --- | --- | --- | --- | --- | --- | --- |
-| Khang — local | fixed_size | TF-IDF / extractive | 162 | 40% | 0.400 | 4 |
+| Khang — local | fixed_size | TF-IDF / extractive | 92 | 60% | 0.600 | 6 |
 | Khang — local | by_sentences | TF-IDF / extractive | 133 | 60% | 0.600 | 6 |
 | Khang — local | recursive | TF-IDF / extractive | 102 | 40% | 0.400 | 4 |
 | Khang — local | heading | TF-IDF / extractive | 145 | 60% | 0.500 | 5 |
 | Hiệp — log cung cấp | fixed | Gemini embedding / Flash | 162 | 80% | 0.467 | 5 |
 | Hiệp — log cung cấp | recursive | Gemini embedding / Flash | 161 | 20% | 0.200 | 2 |
 | Hiệp — log cung cấp | heading | Gemini embedding / Flash | 140 | 80% | 0.567 | 6 |
-| Dũng — log cung cấp | recursive | OpenAI embedding / GPT-4.1-mini | 177 | 20% | 0.200 | 2 |
+| Dũng | Chưa có kết quả | — | — | — | — | — |
 
-Hiệp được import từ log gốc tại root; Dũng từ report/ket_qua_benchmark.txt. Giữ nguyên hai log và hashes. Các lượt API chưa tái lập tại đây. Dũng có cùng 5 ý định nhưng Q1/Q3/Q5 khác nguyên văn. Backend, matcher và implementation khác: bảng là so sánh mô tả hệ thống, không phải thí nghiệm chỉ thay chunker. Corpus hash Dũng chưa xác minh vì thiếu thuật toán tổng hợp.
+Các số liệu Hiệp được import từ [log gốc](../ket_qua_benchmark.txt), kiểm tra tổng điểm và tính nhất quán của 15 records; chưa tái lập remote run. Khang có full artifacts, Hiệp có previews và câu trả lời LLM. Backend, parameters và implementation khác, corpus Hiệp chưa có hash. Bảng này là **so sánh hệ thống trên cùng queries**, không đủ để quy mọi khác biệt cho chunking hay xếp hạng năng lực thành viên.
 
-| Query | Khang fixed rank | Hiệp fixed rank | Hiệp recursive rank | Hiệp heading rank | Dũng recursive rank |
-| --- | --- | --- | --- | --- | --- |
-| Q1 | None | None | None | 3 | None |
-| Q2 | 1 | 2 | 1 | 1 | 1 |
-| Q3 | None | 2 | None | 1 | None |
-| Q4 | None | 1 | None | None | None |
-| Q5 | 1 | 3 | None | 2 | None |
+| Query | Khang heading rank | Hiệp fixed rank | Hiệp recursive rank | Hiệp heading rank |
+| --- | --- | --- | --- | --- |
+| Q1 | 2 | None | None | 3 |
+| Q2 | 1 | 2 | 1 | 1 |
+| Q3 | None | 2 | None | 1 |
+| Q4 | None | 1 | None | None |
+| Q5 | 1 | 3 | None | 2 |
 
-Hiệp heading có evidence Q3 RMIT ở rank 1; Khang/Dũng thiếu evidence đích Q3/Q4. Dũng có Q2 đúng rank 1 nhưng Q1/Q5 thiếu evidence, còn LLM suy diễn sai: Q1 phủ định ngưỡng; Q5 nhầm ngày ban hành thành ngày hiệu lực. Xem [đối chiếu Dũng](KET_QUA_DUNG.md) để phân biệt proxy retrieval và chất lượng câu trả lời.
+Hiệp heading có evidence Q3 RMIT ở rank 1 trong khi local thiếu; local heading có Q5 ở rank 1 còn log Hiệp ở rank 2. Q4 local thiếu UNA, Hiệp fixed tìm marker rank 1 nhưng heading/recursive không có marker. Đó là lý do cần xem từng câu thay vì chỉ một tổng điểm. Chưa có dữ liệu của Dũng để đưa vào so sánh.
 
 ### Metadata A/B
 
@@ -110,11 +110,11 @@ Hiệp heading có evidence Q3 RMIT ở rank 1; Khang/Dũng thiếu evidence đ�
 | recursive | 1.000 | 1.000 | student, faculty, student |
 | heading | 1.000 | 1.000 | student, faculty, student |
 
-A/B local ghi theo bảng thực chạy, không khẳng định MRR tăng nếu số liệu không tăng. Log Hiệp: fixed 0→1, recursive/heading 1→2 điểm khi lọc student. Log Dũng: evidence student từ rank 2 lên rank 1, proxy 1→2; top-1 không filter là faculty. F2 dùng sai faculty cho Q2 làm mất bằng chứng đích.
+Trong lượt local heading, Q2 vẫn đúng top-1 khi bỏ filter nhưng top-3 lẫn tài liệu faculty; filter loại nhiễu đối tượng. Không báo tăng MRR nếu số liệu không tăng. Trong log Hiệp, Q2 fixed tăng 0→1 điểm, recursive/heading tăng 1→2 điểm khi lọc student. Thí nghiệm F2 cố tình lọc faculty cho Q2 làm mất gold evidence, chứng minh filter sai có thể phá retrieval.
 
 ## 5. Chất lượng câu trả lời, failure analysis và demo
 
-Khang fixed-size 500/100 có đánh giá AI hỗ trợ theo rubric: tổng tham khảo **4/10**, xem [báo cáo cá nhân](REPORT_CANHAN.md). Đây là đánh giá output có evidence và lỗi thực tế, không phải điểm chính thức. Log Hiệp heading cao nhất trong ba cấu hình của Hiệp theo content score (6/10), nhưng matcher literal không thay thế đánh giá đủ ý/citation.
+Khang heading có đánh giá AI hỗ trợ theo rubric: tổng tham khảo **5/10**, xem [báo cáo cá nhân](REPORT_CANHAN.md). Đây là đánh giá output có evidence và lỗi thực tế, không phải điểm chính thức. Log Hiệp heading cao nhất trong ba cấu hình của Hiệp theo content score (6/10), nhưng matcher literal không thay thế đánh giá đủ ý/citation.
 
 ## Phân tích lỗi và bài học
 
@@ -129,18 +129,18 @@ Khang fixed-size 500/100 có đánh giá AI hỗ trợ theo rubric: tổng tham 
 **Trade-off:** heading giữ Điều/Mục và ancestry để dễ kiểm tra phạm vi; số record tăng do prefix lặp. In-memory dense search O(N×D), heap top-k O(N log k), phù hợp lab nhỏ; corpus lớn cần sparse/ANN, batching và persistence. Các cải tiến đó chưa được đo ở đây.
 
 
-Kịch bản demo đã chuẩn bị tại [DEMO.md](DEMO.md): chạy tests, benchmark chung, Q2 có/không filter, Q3 failure và so sánh ba thành viên. Chưa ghi nhận buổi thuyết trình đã thực hiện. Bài học chính: đúng file không đủ; cần đúng evidence, đúng đối tượng và đúng phạm vi nguồn.
+Kịch bản demo đã chuẩn bị tại [DEMO.md](DEMO.md): chạy tests, benchmark chung, Q2 có/không filter, Q3 failure và so sánh local–Hiệp. Chưa ghi nhận buổi thuyết trình đã thực hiện. Bài học chính: đúng file không đủ; cần đúng evidence, đúng đối tượng và đúng phạm vi nguồn.
 
 ## 6. Trạng thái nộp bài
 
-Đã có code, báo cáo Khang, corpus, queries/gold, baseline, output và tổng hợp đủ Khang–Hiệp–Dũng. Hồ sơ đã đóng gói để nộp kèm khai báo khác backend/query/matcher. Chưa ghi nhận thuyết trình hoặc gửi bài. Nếu yêu cầu nguyên văn cùng bench.py/Gemini theo kế hoạch nhóm, cần code/config gốc và chạy lại; không xem log hiện tại là bằng chứng thỏa điều kiện đó.
+Code, báo cáo cá nhân Khang, corpus, 5 queries chung, baseline, top-3/answers, similarity, so sánh Khang–Hiệp và kịch bản demo đã có. **Chưa thể đánh dấu toàn bộ phần nhóm hoàn thành** vì chưa có kết quả Dũng và chưa thực hiện thuyết trình. Xem [SUBMISSION_STATUS.md](SUBMISSION_STATUS.md); không tạo kết quả để lấp chỗ trống.
 
 ## Giới hạn và khai báo hỗ trợ
 
 Codex (OpenAI, 2026) hỗ trợ triển khai, chạy tests/benchmark và soạn báo cáo. Corpus và log Hiệp do người dùng cung cấp. Dự đoán similarity là giả thuyết thiết kế có hỗ trợ AI, đã lưu trước lượt tính; không mô tả như dự đoán tự làm của sinh viên. Người nộp cần hiểu, kiểm tra và khai báo hỗ trợ theo yêu cầu môn học.
 
-Local dùng TF-IDF lexical + extractive evidence output, không dùng LLM hay API key. Log Hiệp khai báo Gemini embedding cached + Gemini Flash; được import, chưa chạy tái lập. Đã nhận log Dũng: OpenAI embeddings + GPT-4.1-mini, recursive; Q1/Q3/Q5 khác cách diễn đạt so với Hiệp. Xem [KET_QUA_DUNG.md](KET_QUA_DUNG.md). Buổi demo/thuyết trình chưa diễn ra trong phiên này.
+Local dùng TF-IDF lexical + extractive evidence output, không dùng LLM hay API key. Log Hiệp khai báo Gemini embedding cached + Gemini Flash; được import, chưa chạy tái lập. Dũng chưa có kết quả theo xác nhận của Khang. Buổi demo/thuyết trình chưa diễn ra trong phiên này.
 
 Các gold answers là kiểm thử snapshot tài liệu đã có, không xác nhận chính sách/hiệu lực pháp lý hiện hành. Có 10 file nhưng chỉ 5 URL; một số đoạn UNA lặp giữa general/faculty. Khi chia train/test cần group theo nguồn. Năm queries là bộ đánh giá nội bộ, không phải held-out test; Q3/Q4 thiếu issuer trong câu hỏi nguyên văn nên có độ mơ hồ ngoài ngữ cảnh gold.
 
-Không suy ra chất lượng câu trả lời chỉ từ marker hay doc_id. Các số liệu local-v1 (bộ cũ đạt 5/5) chỉ còn trong archive; bài nộp dùng group-dkh-v3.
+Không suy ra chất lượng câu trả lời chỉ từ marker hay doc_id. Các số liệu local-v1 (bộ cũ đạt 5/5) chỉ còn trong archive; bài nộp dùng group-hiep-v2.

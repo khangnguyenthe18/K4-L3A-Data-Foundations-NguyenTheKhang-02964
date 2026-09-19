@@ -1,5 +1,7 @@
 # K4-L3A — Ngày 7: Nền Tảng Dữ Liệu, Embedding & Vector Store
 
+> **Bản hoàn thiện — Liêm chính khoa học:** xem [cách chạy](docs/RUN_LAB.md), [báo cáo cá nhân](report/REPORT_CANHAN.md), [báo cáo nhóm](report/REPORT_NHOM.md) và [benchmark thực chạy](report/artifacts/BENCHMARK_RESULTS.md). `main.py` hiện mặc định chạy corpus của nhóm; `main.py --sample` chạy demo mẫu ban đầu. Các TODO core đã hoàn thiện; hướng dẫn đề bài gốc được giữ bên dưới để đối chiếu.
+
 > Bản K4-L3A của Lab 07 (chủ đề: dịch vụ/quy định đại học). Hướng dẫn Codelabs để tải lên nằm tại `../codelabs/day7-lab-data-foundations.md`; yêu cầu Giai đoạn 2 riêng xem [K4_VARIANT.md](K4_VARIANT.md). Lớp song song L3B dùng cùng bài học nhưng crawl chủ đề thương mại điện tử.
 
 ---

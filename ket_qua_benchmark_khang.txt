@@ -1,0 +1,243 @@
+========================================================================
+KET QUA BENCHMARK - Nguyen The Khang (2A202602964)
+Thoi gian: 2026-09-19 10:32 UTC
+Python: 3.11.9
+Strategy: fixed_size (chunk_size=500, overlap=100)
+Backend: tfidf-word-unigram-l2 (lexical, offline) + extractive (khong LLM)
+Chunks nap: 162
+========================================================================
+
+------------------------------------------------------------------------
+## Q1: Theo quy định của UEH, tỷ lệ tương đồng từ bao nhiêu phần trăm thì sản phẩm học thuật bị xem là có dấu hiệu đạo văn?
+Filter: null
+Gold:   Theo snapshot UEH, tỷ lệ tương đồng từ 20% trở lên là một dấu hiệu định lượng, sau khi loại các phần được miễn trừ nêu trong quy định; không tự động kết luận đạo văn chỉ từ tỷ lệ này.
+
+Rank    Score  Chunk ID
+---       ---  ---
+1      0.4561  ueh-dao-van-ai-quy-dinh-chung:fixed_size:003
+       >  ảnh, mô hình, sản phẩm học thuật của người khác mà không ghi nhận, trích dẫn hoặc chú thích phù hợp; hoặc tái sử dụng sản phẩm học thuật của chính mình (tự đạo văn) mà không nêu rõ nguồn gốc và tình ...
+2      0.4402  ueh-dao-van-ai-quy-dinh-chung:fixed_size:004
+       > kiểm tra đạo văn có chức năng so sánh với cơ sở dữ liệu học thuật rộng và cho phép phân tích chi tiết mức độ trùng lặp, được UEH phê duyệt sử dụng). Tỷ lệ tương đồng không phải là căn cứ duy nhất để k...
+3      0.4165  ueh-dao-van-ai-quy-dinh-chung:fixed_size:009
+       > ng cụ tương đương để phát hiện tỷ lệ tương đồng học thuật trong các sản phẩm học thuật. Kết quả tỷ lệ tương đồng chỉ mang tính tham khảo, hỗ trợ, không tự động kết luận là đạo văn. Việc kết luận dựa t...
+
+Agent output:
+  [EXTRACTIVE BASELINE — không phải LLM]
+  
+  ảnh, mô hình, sản phẩm học thuật của người khác mà không ghi nhận, trích dẫn hoặc chú thích phù hợp; hoặc tái sử dụng sản phẩm học thuật của chính mình (tự đạo văn) mà không nêu rõ nguồn gốc và tình trạng công bố.
+  
+  ### Tỷ lệ tương đồng học thuật
+  
+  Tỷ lệ tương đồng học thuật là tỷ lệ phần trăm nội dung trùng lặp trong sản phẩm học thuật được xác định bằng phần mềm hỗ trợ (Turnitin hoặc các công cụ kiểm tra đạo văn có chức năng so sánh với cơ sở dữ liệu học thuật rộng và cho phép phân tích chi tiế
+  [ueh-dao-van-ai-quy-dinh-chung:fixed_size:003](https://daotao.ueh.edu.vn/quy-dinh-ve-viec-kiem-soat-xu-ly-hanh-vi-dao-van-su-dung-tri-tue-nhan-tao-ai-trong-cac-san-pham-hoc-thuat-tai-dai-hoc-kinh-te-thanh-pho-ho-chi-minh/)
+  
+  kiểm tra đạo văn có chức năng so sánh với cơ sở dữ liệu học thuật rộng và cho phép phân tích chi tiết mức độ trùng lặp, được UEH phê duyệt sử dụng). Tỷ lệ tương đồng không phải là căn cứ duy nhất để kết luận đạo văn; việc đánh giá phải dựa trên xem xét chuyên môn của đơn vị quản lý, giảng viên hoặc hội đồng có thẩm quyền.
+  
+  ### Các dấu hiệu của hành vi đạo văn hoặc vi phạm liêm chính học thuật
+  
+  Sản phẩm học thuật có thể xem là có dấu hiệu vi phạm nếu có ít nhất một trong các biểu hiện sau:
+  
+  a) Dấ
+  [ueh-dao-van-ai-quy-dinh-chung:fixed_size:004](https://daotao.ueh.edu.vn/quy-dinh-ve-viec-kiem-soat-xu-ly-hanh-vi-dao-van-su-dung-tri-tue-nhan-tao-ai-trong-cac-san-pham-hoc-thuat-tai-dai-hoc-kinh-te-thanh-pho-ho-chi-minh/)
+  
+  ng cụ tương đương để phát hiện tỷ lệ tương đồng học thuật trong các sản phẩm học thuật. Kết quả tỷ lệ tương đồng chỉ mang tính tham khảo, hỗ trợ, không tự động kết luận là đạo văn. Việc kết luận dựa trên xem xét bối cảnh, phạm vi, tính chất nội dung trùng lặp, ý chí của người thực hiện và các chứng cứ liên quan. Việc đánh giá do giảng viên phụ trách/người hướng dẫn hoặc hội đồng/đơn vị có thẩm quyền thực hiện theo quy trình được UEH quy định.
+  
+  2. Xử lý hành vi đạo văn
+  
+  ### 2.1 Nguyên tắc xử lý h
+  [ueh-dao-van-ai-quy-dinh-chung:fixed_size:009](https://daotao.ueh.edu.vn/quy-dinh-ve-viec-kiem-soat-xu-ly-hanh-vi-dao-van-su-dung-tri-tue-nhan-tao-ai-trong-cac-san-pham-hoc-thuat-tai-dai-hoc-kinh-te-thanh-pho-ho-chi-minh/)
+
+------------------------------------------------------------------------
+## Q2: Sản phẩm học thuật đã chỉnh sửa nhưng vẫn vi phạm lỗi đạo văn thì xử lý ra sao?
+Filter: {"audience": "student"}
+Gold:   Trong bối cảnh bài tập học phần của người học: giảng viên phụ trách lập biên bản/thông báo chuyển về đơn vị quản lý để xử lý tùy mức độ vi phạm quy định tại Phụ lục 3.
+
+Rank    Score  Chunk ID
+---       ---  ---
+1      0.4009  ueh-xu-ly-vi-pham-nguoi-hoc:fixed_size:002
+       >  nhiệm theo các quy định của UEH và pháp luật hiện hành.  ### 2.3 Đối với các bài kiểm tra, bài tập, tiểu luận và các bài khác thuộc các học phần  a) Khi bị phát hiện vi phạm lần đầu, người học phải c...
+2      0.3325  ueh-xu-ly-vi-pham-nguoi-hoc:fixed_size:005
+       > ật hiện hành.  ### 2.2. Đối với các bài kiểm tra, bài tập, tiểu luận, đồ án, dự án và các bài khác thuộc học phần  a) Khi bị phát hiện vi phạm lần đầu, người học phải chỉnh sửa và nộp lại bài theo yêu...
+3      0.2734  ueh-xu-ly-vi-pham-nguoi-hoc:fixed_size:000
+       > # UEH — Xử lý vi phạm đạo văn và sử dụng AI đối với người học  (Kèm theo Quyết định số: 4002/QĐ-ĐHKT-NCPTGKTC, ngày 18 tháng 12 năm 2025 của Giám đốc Đại học Kinh tế Thành phố Hồ Chí Minh)  ## Điều 3....
+
+Agent output:
+  [EXTRACTIVE BASELINE — không phải LLM]
+  
+  nhiệm theo các quy định của UEH và pháp luật hiện hành.
+  
+  ### 2.3 Đối với các bài kiểm tra, bài tập, tiểu luận và các bài khác thuộc các học phần
+  
+  a) Khi bị phát hiện vi phạm lần đầu, người học phải chỉnh sửa và nộp lại bài theo yêu cầu của giảng viên;
+  
+  b) Sau khi đã chỉnh sửa, người học nộp lại bài nhưng vẫn vi phạm lỗi đạo văn thì giảng viên phụ trách học phần lập biên bản/thông báo chuyển về đơn vị quản lý để xử lý tùy theo mức độ vi phạm quy định tại Phụ lục 3.
+  
+  ## Điều 5. Xử lý vi phạm sử d
+  [ueh-xu-ly-vi-pham-nguoi-hoc:fixed_size:002](https://daotao.ueh.edu.vn/quy-dinh-ve-viec-kiem-soat-xu-ly-hanh-vi-dao-van-su-dung-tri-tue-nhan-tao-ai-trong-cac-san-pham-hoc-thuat-tai-dai-hoc-kinh-te-thanh-pho-ho-chi-minh/)
+  
+  ật hiện hành.
+  
+  ### 2.2. Đối với các bài kiểm tra, bài tập, tiểu luận, đồ án, dự án và các bài khác thuộc học phần
+  
+  a) Khi bị phát hiện vi phạm lần đầu, người học phải chỉnh sửa và nộp lại bài theo yêu cầu của giảng viên;
+  
+  b) Nếu vẫn vi phạm sau khi đã chỉnh sửa, giảng viên phụ trách học phần lập biên bản, thông báo chuyển cho đơn vị quản lý để xử lý tùy theo mức độ vi phạm.
+  
+  ## Điều 6. Tổ chức thực hiện — trách nhiệm của người học
+  
+  ### Trách nhiệm của tác giả sản phẩm học thuật và người học tại
+  [ueh-xu-ly-vi-pham-nguoi-hoc:fixed_size:005](https://daotao.ueh.edu.vn/quy-dinh-ve-viec-kiem-soat-xu-ly-hanh-vi-dao-van-su-dung-tri-tue-nhan-tao-ai-trong-cac-san-pham-hoc-thuat-tai-dai-hoc-kinh-te-thanh-pho-ho-chi-minh/)
+  
+  # UEH — Xử lý vi phạm đạo văn và sử dụng AI đối với người học
+  
+  (Kèm theo Quyết định số: 4002/QĐ-ĐHKT-NCPTGKTC, ngày 18 tháng 12 năm 2025 của Giám đốc Đại học Kinh tế Thành phố Hồ Chí Minh)
+  
+  ## Điều 3. Xử lý hành vi đạo văn — áp dụng cho người học
+  
+  ### 2.2 Đối với khóa luận, đề án tốt nghiệp, luận văn, luận án
+  
+  a) Trước khi bảo vệ:
+  
+  Khi phát hiện có dấu hiệu đạo văn, người học phải chỉnh sửa, bổ sung và khắc phục theo yêu cầu của giảng viên hướng dẫn hoặc đơn vị quản lý.
+  
+  b) Trong khi bảo vệ:
+  
+  Nế
+  [ueh-xu-ly-vi-pham-nguoi-hoc:fixed_size:000](https://daotao.ueh.edu.vn/quy-dinh-ve-viec-kiem-soat-xu-ly-hanh-vi-dao-van-su-dung-tri-tue-nhan-tao-ai-trong-cac-san-pham-hoc-thuat-tai-dai-hoc-kinh-te-thanh-pho-ho-chi-minh/)
+
+------------------------------------------------------------------------
+## Q3: Khi ghi nhận việc dùng công cụ AI trong bài làm, câu acknowledgement cần nêu những thông tin gì?
+Filter: null
+Gold:   Theo hướng dẫn RMIT Library: nêu cách sử dụng AI, tên công cụ và nhà phát triển, năm nội dung AI được người dùng tạo ra. Không bắt buộc phiên bản/ngày dùng trừ khi giảng viên yêu cầu.
+
+Rank    Score  Chunk ID
+---       ---  ---
+1      0.2160  ueh-dao-van-ai-quy-dinh-chung:fixed_size:014
+       > ạt động học thuật tại UEH được sử dụng AI để hỗ trợ hoạt động nghiên cứu và học tập tại UEH trên cơ sở tuân thủ các nguyên tắc sau:  - Minh bạch: ghi rõ công cụ AI tạo sinh đã sử dụng, mục đích sử dụn...
+2      0.1707  ueh-dao-van-ai-quy-dinh-chung:fixed_size:017
+       > , không bắt buộc thông báo nếu chỉ sử dụng để kiểm tra ngôn ngữ, chỉnh lỗi chính tả, ngữ pháp hoặc dịch thuật trực tiếp không mang tính sáng tạo nội dung. 3. Những hành vi bị xem là vi phạm quy tắc sử...
+3      0.1629  ueh-dao-van-ai-quy-dinh-chung:fixed_size:020
+       > huật  1. Việc phát hiện và đánh giá vi phạm sử dụng AI trong học thuật do giảng viên phụ trách/người hướng dẫn hoặc hội đồng/đơn vị có thẩm quyền thực hiện, trên cơ sở xem xét các yếu tố: mức độ sử dụ...
+
+Agent output:
+  [EXTRACTIVE BASELINE — không phải LLM]
+  
+  ạt động học thuật tại UEH được sử dụng AI để hỗ trợ hoạt động nghiên cứu và học tập tại UEH trên cơ sở tuân thủ các nguyên tắc sau:
+  
+  - Minh bạch: ghi rõ công cụ AI tạo sinh đã sử dụng, mục đích sử dụng (tóm tắt, dịch thuật, tạo hình, viết mã v.v.) và những nội dung có sự hỗ trợ của AI tạo sinh trong sản phẩm học thuật. Việc khai báo cần thực hiện theo chuẩn, ví dụ: Trong phần Acknowledgement hoặc Phương pháp nghiên cứu ghi: “Một phần nội dung của sản phẩm này được hỗ trợ bởi ChatGPT (phiên bản …
+  [ueh-dao-van-ai-quy-dinh-chung:fixed_size:014](https://daotao.ueh.edu.vn/quy-dinh-ve-viec-kiem-soat-xu-ly-hanh-vi-dao-van-su-dung-tri-tue-nhan-tao-ai-trong-cac-san-pham-hoc-thuat-tai-dai-hoc-kinh-te-thanh-pho-ho-chi-minh/)
+  
+  , không bắt buộc thông báo nếu chỉ sử dụng để kiểm tra ngôn ngữ, chỉnh lỗi chính tả, ngữ pháp hoặc dịch thuật trực tiếp không mang tính sáng tạo nội dung.
+  3. Những hành vi bị xem là vi phạm quy tắc sử dụng AI trong học thuật:
+  
+  a) Sử dụng nội dung do AI tạo ra nhưng không thông báo hoặc thông báo không đầy đủ việc sử dụng công cụ, phạm vi và vai trò của AI.
+  
+  b) Sử dụng AI để tạo ra nội dung nhưng không kiểm tra, xác nhận nguồn hoặc độ chính xác.
+  
+  c) Sử dụng AI để tạo ra toàn bộ hoặc phần lớn nội
+  [ueh-dao-van-ai-quy-dinh-chung:fixed_size:017](https://daotao.ueh.edu.vn/quy-dinh-ve-viec-kiem-soat-xu-ly-hanh-vi-dao-van-su-dung-tri-tue-nhan-tao-ai-trong-cac-san-pham-hoc-thuat-tai-dai-hoc-kinh-te-thanh-pho-ho-chi-minh/)
+  
+  huật
+  
+  1. Việc phát hiện và đánh giá vi phạm sử dụng AI trong học thuật do giảng viên phụ trách/người hướng dẫn hoặc hội đồng/đơn vị có thẩm quyền thực hiện, trên cơ sở xem xét các yếu tố: mức độ sử dụng AI, vai trò của AI trong sản phẩm, hành vi thông báo sử dụng hoặc không thông báo, dấu hiệu gian lận hoặc thay thế nhiệm vụ học thuật. UEH không sử dụng kết quả của các công cụ phát hiện nội dụng do AI tạo ra làm căn cứ duy nhất để kết luận vi phạm học thuật. Đánh giá vi phạm sử dụng AI được thực
+  [ueh-dao-van-ai-quy-dinh-chung:fixed_size:020](https://daotao.ueh.edu.vn/quy-dinh-ve-viec-kiem-soat-xu-ly-hanh-vi-dao-van-su-dung-tri-tue-nhan-tao-ai-trong-cac-san-pham-hoc-thuat-tai-dai-hoc-kinh-te-thanh-pho-ho-chi-minh/)
+
+------------------------------------------------------------------------
+## Q4: Những loại thông tin nào không được phép nhập vào công cụ AI tạo sinh?
+Filter: null
+Gold:   Theo snapshot UNA, không nhập thông tin cá nhân, bí mật, độc quyền hoặc nhạy cảm: ví dụ hồ sơ sinh viên/tuyển sinh, số an sinh xã hội, dữ liệu thẻ/ngân hàng, giấy tờ định danh, dữ liệu y tế/bảo hiểm, dữ liệu người tham gia nghiên cứu chưa được đồng ý công khai, hồ sơ nội bộ và nội dung thuộc NDA/sở hữu trí tuệ chưa được phép. Danh sách ví dụ không giới hạn ở một loại dữ liệu.
+
+Rank    Score  Chunk ID
+---       ---  ---
+1      0.2731  ueh-dao-van-ai-quy-dinh-chung:fixed_size:011
+       > lỗi kỹ thuật hoặc sơ suất trong ghi nguồn, trích dẫn không đầy đủ, có thể được xem xét yêu cầu chỉnh sửa mà không xử phạt nếu không có dấu hiệu gian lận.  ## Điều 4. Sử dụng AI trong học thuật  1. Tro...
+2      0.2475  ueh-dao-van-ai-quy-dinh-chung:fixed_size:016
+       >  cấp cho AI dữ liệu cá nhân, dữ liệu mật, thông tin chưa công bố hoặc dữ liệu nghiên cứu nội bộ của UEH hoặc đối tác nếu chưa được phép. - Không lạm dụng: không sử dụng AI để thay thế nhiệm vụ học thu...
+3      0.2366  ueh-dao-van-ai-quy-dinh-chung:fixed_size:017
+       > , không bắt buộc thông báo nếu chỉ sử dụng để kiểm tra ngôn ngữ, chỉnh lỗi chính tả, ngữ pháp hoặc dịch thuật trực tiếp không mang tính sáng tạo nội dung. 3. Những hành vi bị xem là vi phạm quy tắc sử...
+
+Agent output:
+  [EXTRACTIVE BASELINE — không phải LLM]
+  
+  lỗi kỹ thuật hoặc sơ suất trong ghi nguồn, trích dẫn không đầy đủ, có thể được xem xét yêu cầu chỉnh sửa mà không xử phạt nếu không có dấu hiệu gian lận.
+  
+  ## Điều 4. Sử dụng AI trong học thuật
+  
+  1. Trong Quy định này, trí tuệ nhân tạo (AI) được hiểu là các công cụ, hệ thống hoặc thuật toán có khả năng tạo, phân tích hoặc xử lý nội dung hỗ trợ hoạt động học thuật. AI được xem là công cụ hỗ trợ, không thay thế trách nhiệm tư duy, phân tích và sáng tạo của tác giả. AI trong học thuật được phân loại
+  [ueh-dao-van-ai-quy-dinh-chung:fixed_size:011](https://daotao.ueh.edu.vn/quy-dinh-ve-viec-kiem-soat-xu-ly-hanh-vi-dao-van-su-dung-tri-tue-nhan-tao-ai-trong-cac-san-pham-hoc-thuat-tai-dai-hoc-kinh-te-thanh-pho-ho-chi-minh/)
+  
+  cấp cho AI dữ liệu cá nhân, dữ liệu mật, thông tin chưa công bố hoặc dữ liệu nghiên cứu nội bộ của UEH hoặc đối tác nếu chưa được phép.
+  - Không lạm dụng: không sử dụng AI để thay thế nhiệm vụ học thuật mà người học hoặc giảng viên phải tự thực hiện. AI chỉ đóng vai trò hỗ trợ. Khuyến khích người học và giảng viên sử dụng có trách nhiệm và không phụ thuộc hoàn toàn vào công cụ.
+  - Đối với AI hỗ trợ, không bắt buộc thông báo nếu chỉ sử dụng để kiểm tra ngôn ngữ, chỉnh lỗi chính tả, ngữ pháp hoặc d
+  [ueh-dao-van-ai-quy-dinh-chung:fixed_size:016](https://daotao.ueh.edu.vn/quy-dinh-ve-viec-kiem-soat-xu-ly-hanh-vi-dao-van-su-dung-tri-tue-nhan-tao-ai-trong-cac-san-pham-hoc-thuat-tai-dai-hoc-kinh-te-thanh-pho-ho-chi-minh/)
+  
+  , không bắt buộc thông báo nếu chỉ sử dụng để kiểm tra ngôn ngữ, chỉnh lỗi chính tả, ngữ pháp hoặc dịch thuật trực tiếp không mang tính sáng tạo nội dung.
+  3. Những hành vi bị xem là vi phạm quy tắc sử dụng AI trong học thuật:
+  
+  a) Sử dụng nội dung do AI tạo ra nhưng không thông báo hoặc thông báo không đầy đủ việc sử dụng công cụ, phạm vi và vai trò của AI.
+  
+  b) Sử dụng AI để tạo ra nội dung nhưng không kiểm tra, xác nhận nguồn hoặc độ chính xác.
+  
+  c) Sử dụng AI để tạo ra toàn bộ hoặc phần lớn nội
+  [ueh-dao-van-ai-quy-dinh-chung:fixed_size:017](https://daotao.ueh.edu.vn/quy-dinh-ve-viec-kiem-soat-xu-ly-hanh-vi-dao-van-su-dung-tri-tue-nhan-tao-ai-trong-cac-san-pham-hoc-thuat-tai-dai-hoc-kinh-te-thanh-pho-ho-chi-minh/)
+
+------------------------------------------------------------------------
+## Q5: Thông tư 49/2026/TT-BGDĐT có hiệu lực từ ngày nào và thay thế những thông tư nào?
+Filter: null
+Gold:   Theo Điều 22 trong snapshot nhóm cung cấp: hiệu lực từ 15/08/2026; Thông tư 15/2018/TT-BGDĐT và 30/2023/TT-BGDĐT hết hiệu lực từ ngày đó. Đây là gold answer kiểm thử snapshot, chưa xác minh tình trạng pháp lý hiện hành.
+
+Rank    Score  Chunk ID
+---       ---  ---
+1      0.3587  tt49-2026-ung-dung-cong-nghe-ai:fixed_size:029
+       > học thuật; trung thực trong học tập, giảng dạy, nghiên cứu khoa học và công bố việc sử dụng công nghệ, trí tuệ nhân tạo khi có yêu cầu.  ## Điều 22. Điều khoản thi hành  1. Thông tư này có hiệu lực th...
+2      0.3111  tt49-2026-ung-dung-cong-nghe-ai:fixed_size:030
+       > n điện tử của các cơ sở giáo dục đại học, các trường cao đẳng sư phạm; Thông tư số 30/2023/TT-BGDĐT ngày 29 tháng 12 năm 2023 của Bộ trưởng Bộ Giáo dục và Đào tạo quy định về ứng dụng công nghệ thông ...
+3      0.3103  tt49-2026-ung-dung-cong-nghe-ai:fixed_size:000
+       > # Thông tư 49/2026/TT-BGDĐT — Ứng dụng công nghệ và AI trong giáo dục đại học  Số: 49/2026/TT-BGDĐT — Hà Nội, ngày 30 tháng 06 năm 2026.  Quy định ứng dụng công nghệ trong giáo dục đại học, giáo dục n...
+
+Agent output:
+  [EXTRACTIVE BASELINE — không phải LLM]
+  
+  học thuật; trung thực trong học tập, giảng dạy, nghiên cứu khoa học và công bố việc sử dụng công nghệ, trí tuệ nhân tạo khi có yêu cầu.
+  
+  ## Điều 22. Điều khoản thi hành
+  
+  1. Thông tư này có hiệu lực thi hành kể từ ngày 15 tháng 08 năm 2026.
+  
+  2. Thông tư số 15/2018/TT-BGDĐT ngày 27 tháng 7 năm 2018 của Bộ trưởng Bộ Giáo dục và Đào tạo quy định tổ chức hoạt động, sử dụng thư điện tử và trang thông tin điện tử của các cơ sở giáo dục đại học, các trường cao đẳng sư phạm; Thông tư số 30/2023/TT-BGDĐT
+  [tt49-2026-ung-dung-cong-nghe-ai:fixed_size:029](https://luatvietnam.vn/giao-duc/thong-tu-49-2026-tt-bgddt-ung-dung-cong-nghe-trong-giao-duc-dai-hoc-va-nghe-nghiep-439350-d1.html)
+  
+  n điện tử của các cơ sở giáo dục đại học, các trường cao đẳng sư phạm; Thông tư số 30/2023/TT-BGDĐT ngày 29 tháng 12 năm 2023 của Bộ trưởng Bộ Giáo dục và Đào tạo quy định về ứng dụng công nghệ thông tin trong đào tạo trực tuyến đối với giáo dục đại học hết hiệu lực thi hành từ ngày Thông tư này có hiệu lực.
+  
+  3. Chánh Văn phòng, Cục trưởng Cục Khoa học, Công nghệ và Thông tin, Thủ trưởng các đơn vị thuộc Bộ Giáo dục và Đào tạo, Giám đốc các đại học, học viện, Hiệu trưởng các trường đại học, Hiệu
+  [tt49-2026-ung-dung-cong-nghe-ai:fixed_size:030](https://luatvietnam.vn/giao-duc/thong-tu-49-2026-tt-bgddt-ung-dung-cong-nghe-trong-giao-duc-dai-hoc-va-nghe-nghiep-439350-d1.html)
+  
+  # Thông tư 49/2026/TT-BGDĐT — Ứng dụng công nghệ và AI trong giáo dục đại học
+  
+  Số: 49/2026/TT-BGDĐT — Hà Nội, ngày 30 tháng 06 năm 2026.
+  
+  Quy định ứng dụng công nghệ trong giáo dục đại học, giáo dục nghề nghiệp (trích các Điều liên quan đến trí tuệ nhân tạo và liêm chính học thuật).
+  
+  ## Điều 1. Phạm vi điều chỉnh
+  
+  Thông tư này quy định về ứng dụng công nghệ trong giáo dục đại học, giáo dục nghề nghiệp bao gồm: nguyên tắc, nội dung và điều kiện bảo đảm việc ứng dụng công nghệ số, trí tuệ nhân tạo
+  [tt49-2026-ung-dung-cong-nghe-ai:fixed_size:000](https://luatvietnam.vn/giao-duc/thong-tu-49-2026-tt-bgddt-ung-dung-cong-nghe-trong-giao-duc-dai-hoc-va-nghe-nghiep-439350-d1.html)
+
+========================================================================
+## A/B - Q2 co/khong metadata filter
+========================================================================
+
+### CO filter (audience=student)
+Rank    Score  Audience   Chunk ID
+1      0.4009  student    ueh-xu-ly-vi-pham-nguoi-hoc:fixed_size:002
+2      0.3325  student    ueh-xu-ly-vi-pham-nguoi-hoc:fixed_size:005
+3      0.2734  student    ueh-xu-ly-vi-pham-nguoi-hoc:fixed_size:000
+
+### KHONG filter
+Rank    Score  Audience   Chunk ID
+1      0.4009  student    ueh-xu-ly-vi-pham-nguoi-hoc:fixed_size:002
+2      0.3488  faculty    ueh-xu-ly-vi-pham-giang-vien:fixed_size:000
+3      0.3325  student    ueh-xu-ly-vi-pham-nguoi-hoc:fixed_size:005
+
+========================================================================
+Ket thuc benchmark.

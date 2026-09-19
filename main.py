@@ -127,8 +127,13 @@ def run_manual_demo(question: str | None = None, sample_files: list[str] | None 
 
 
 def main() -> int:
-    question = " ".join(sys.argv[1:]).strip() if len(sys.argv) > 1 else None
-    return run_manual_demo(question=question)
+    if sys.argv[1:2] == ["--sample"]:
+        question = " ".join(sys.argv[2:]).strip() or None
+        return run_manual_demo(question=question)
+    from scripts.demo_integrity import main as integrity_demo
+
+    integrity_demo()
+    return 0
 
 
 if __name__ == "__main__":

@@ -1,0 +1,589 @@
+{
+  "member": "Đặng Quốc Hiệp",
+  "source_file": "ket_qua_benchmark.txt",
+  "source_sha256": "1faab93d69ef6d81e8fc8e083f832f74900b572e5cf32b53481507ad012658db",
+  "provenance": "User-supplied member log; imported, not reproduced locally",
+  "embedding": "gemini-embedding-001 (cached)",
+  "llm": "gemini-2.5-flash",
+  "experiments": [
+    {
+      "strategy": "fixed",
+      "label": "FixedSizeChunker(chunk_size=500, overlap=100)",
+      "chunk_count": 162,
+      "avg_length": 487,
+      "min_length": 127,
+      "max_length": 500,
+      "content_score": 5,
+      "naive_score": 10,
+      "hit_at_3": 0.8,
+      "mrr_at_3": 0.4666666666666667,
+      "queries": [
+        {
+          "id": "Q1",
+          "question": "Theo quy định của UEH, tỷ lệ tương đồng từ bao nhiêu phần trăm thì sản phẩm học thuật bị xem là có dấu hiệu đạo văn?",
+          "metadata_filter": null,
+          "gold_doc_ids": [
+            "ueh-dao-van-ai-quy-dinh-chung"
+          ],
+          "evidence_markers": [
+            "20% trở lên"
+          ],
+          "naive_score": 2,
+          "content_score": 0,
+          "evidence_rank": null,
+          "top3_previews": [
+            {
+              "rank": 1,
+              "score": 0.868,
+              "chunk_id": "ueh-dao-van-ai-quy-dinh-chung#4",
+              "preview": "kiểm tra đạo văn có chức năng so sánh với cơ sở dữ liệu học thuật rộng và cho phép phân tích chi tiết mức độ trùng lặp, được UEH phê duyệt sử dụng). T"
+            },
+            {
+              "rank": 2,
+              "score": 0.867,
+              "chunk_id": "ueh-dao-van-ai-quy-dinh-chung#9",
+              "preview": "ng cụ tương đương để phát hiện tỷ lệ tương đồng học thuật trong các sản phẩm học thuật. Kết quả tỷ lệ tương đồng chỉ mang tính tham khảo, hỗ trợ, khôn"
+            },
+            {
+              "rank": 3,
+              "score": 0.845,
+              "chunk_id": "ueh-dao-van-ai-quy-dinh-chung#8",
+              "preview": "chính học thuật) - Trích dẫn sai, không đầy đủ hoặc sai định dạng nghiêm trọng. - Liệt kê tài liệu tham khảo nhưng không sử dụng trong nội dung bài vi"
+            }
+          ],
+          "agent_answer_logged": "Theo ngữ cảnh, tỷ lệ tương đồng không phải là căn cứ duy nhất để kết luận đạo văn và kết quả tỷ lệ tương đồng chỉ mang tính tham khảo, hỗ trợ, không tự động kết luận là đạo văn [1], [2]. Việc kết luận đạo văn dựa trên xem xét chuyên môn của đơn vị quản lý, giảng viên hoặc hội đồng có thẩm quyền, cùng với bối cảnh, phạm vi, tính chất nội dung trùng lặp, ý chí của người thực hiện và các chứng cứ liên quan [1], [2]. Ngữ cảnh không cung cấp thông tin về một tỷ lệ phần trăm cụ thể mà sản phẩm học thuật bị xem là có dấu hiệu đạo văn dựa trên tỷ lệ tương đồng."
+        },
+        {
+          "id": "Q2",
+          "question": "Sản phẩm học thuật đã chỉnh sửa nhưng vẫn vi phạm lỗi đạo văn thì xử lý ra sao?",
+          "metadata_filter": {
+            "audience": "student"
+          },
+          "gold_doc_ids": [
+            "ueh-xu-ly-vi-pham-nguoi-hoc"
+          ],
+          "evidence_markers": [
+            "lập biên bản"
+          ],
+          "naive_score": 2,
+          "content_score": 1,
+          "evidence_rank": 2,
+          "top3_previews": [
+            {
+              "rank": 1,
+              "score": 0.791,
+              "chunk_id": "ueh-xu-ly-vi-pham-nguoi-hoc#1",
+              "preview": "ng và khắc phục theo yêu cầu của giảng viên hướng dẫn hoặc đơn vị quản lý. b) Trong khi bảo vệ: Nếu Hội đồng đánh giá luận văn/luận án phát hiện hành "
+            },
+            {
+              "rank": 2,
+              "score": 0.777,
+              "chunk_id": "ueh-xu-ly-vi-pham-nguoi-hoc#2",
+              "preview": "nhiệm theo các quy định của UEH và pháp luật hiện hành. ### 2.3 Đối với các bài kiểm tra, bài tập, tiểu luận và các bài khác thuộc các học phần a) Khi"
+            },
+            {
+              "rank": 3,
+              "score": 0.771,
+              "chunk_id": "ueh-xu-ly-vi-pham-nguoi-hoc#0",
+              "preview": "# UEH — Xử lý vi phạm đạo văn và sử dụng AI đối với người học (Kèm theo Quyết định số: 4002/QĐ-ĐHKT-NCPTGKTC, ngày 18 tháng 12 năm 2025 của Giám đốc Đ"
+            }
+          ],
+          "agent_answer_logged": "Đối với các bài kiểm tra, bài tập, tiểu luận và các bài khác thuộc các học phần, sau khi đã chỉnh sửa nhưng người học nộp lại bài vẫn vi phạm lỗi đạo văn thì giảng viên phụ trách học phần lập biên bản/thông báo chuyển về đơn vị quản lý để xử lý tùy theo mức độ vi phạm quy định tại Phụ lục 3 [2]."
+        },
+        {
+          "id": "Q3",
+          "question": "Khi ghi nhận việc dùng công cụ AI trong bài làm, câu acknowledgement cần nêu những thông tin gì?",
+          "metadata_filter": null,
+          "gold_doc_ids": [
+            "rmit-ai-acknowledgement-guide"
+          ],
+          "evidence_markers": [
+            "the name of the AI tool and its creator"
+          ],
+          "naive_score": 2,
+          "content_score": 1,
+          "evidence_rank": 2,
+          "top3_previews": [
+            {
+              "rank": 1,
+              "score": 0.826,
+              "chunk_id": "rmit-ai-acknowledgement-guide#5",
+              "preview": "ontent was generated by the user In your reference list or bibliography, include an entry for the AI tool. Format for the acknowledgement (based on AP"
+            },
+            {
+              "rank": 2,
+              "score": 0.813,
+              "chunk_id": "rmit-ai-acknowledgement-guide#4",
+              "preview": "eptember 2025) advice from the APA 7th style manual editors. Please note that there is no longer a requirement to include the version number for the A"
+            },
+            {
+              "rank": 3,
+              "score": 0.81,
+              "chunk_id": "rmit-ai-acknowledgement-guide#0",
+              "preview": "# RMIT Library — Acknowledging the use of AI tools (students) ## Acknowledging the AI tools you have used In some assessment tasks, you may be permitt"
+            }
+          ],
+          "agent_answer_logged": "Khi ghi nhận việc dùng công cụ AI trong bài làm, câu acknowledgement cần nêu những thông tin sau: * Cách bạn đã sử dụng công cụ AI [1], [2]. * Tên công cụ AI và người tạo ra nó [1], [2]. * Năm nội dung AI được tạo bởi người dùng [1], [2]. Không yêu cầu phải bao gồm số phiên bản của công cụ AI hoặc ngày bạn sử dụng công cụ, trừ khi bạn được yêu cầu làm như vậy bởi điều phối viên khóa học hoặc giáo viên của bạn [2]."
+        },
+        {
+          "id": "Q4",
+          "question": "Những loại thông tin nào không được phép nhập vào công cụ AI tạo sinh?",
+          "metadata_filter": null,
+          "gold_doc_ids": [
+            "una-genai-policy-faculty",
+            "una-genai-policy-general"
+          ],
+          "evidence_markers": [
+            "Social Security numbers"
+          ],
+          "naive_score": 2,
+          "content_score": 2,
+          "evidence_rank": 1,
+          "top3_previews": [
+            {
+              "rank": 1,
+              "score": 0.795,
+              "chunk_id": "una-genai-policy-faculty#9",
+              "preview": "ormation that should not be published or uploaded into a Generative AI tool. Examples include but are not limited to: - Student records subject to FER"
+            },
+            {
+              "rank": 2,
+              "score": 0.786,
+              "chunk_id": "una-genai-policy-general#8",
+              "preview": "y owned by or licensed from a third party without express written permission - Donor information - Passport or visa numbers - Copyrighted material unl"
+            },
+            {
+              "rank": 3,
+              "score": 0.753,
+              "chunk_id": "una-genai-policy-students#6",
+              "preview": "nerated content in your work, it must be properly credited, even if the AI only provided part of the assignment. Failure to do so will be treated as a"
+            }
+          ],
+          "agent_answer_logged": "Những loại thông tin không được phép nhập vào công cụ AI tạo sinh bao gồm: * Hồ sơ sinh viên thuộc FERPA [1] * Hồ sơ tuyển sinh [1] * Số An sinh xã hội [1] * Thông tin thẻ tín dụng/ghi nợ [1] * Số giấy phép lái xe hoặc thẻ nhận dạng tiểu bang [1] * Dữ liệu y tế hoặc liên quan đến bệnh nhân, bao gồm lịch sử y tế, chẩn đoán, tình trạng tâm thần/thể chất hoặc điều trị [1] * Thông tin bảo hiểm y tế, bao gồm số hợp đồng, số người đăng ký, thông tin ứng dụng [1] * Thông tin thuộc sở hữu hoặc được cấp phép từ bên thứ ba mà không có sự cho phép bằng văn bản rõ ràng [2] * Thông tin nhà tài trợ [2] * Số"
+        },
+        {
+          "id": "Q5",
+          "question": "Thông tư 49/2026/TT-BGDĐT có hiệu lực từ ngày nào và thay thế những thông tư nào?",
+          "metadata_filter": null,
+          "gold_doc_ids": [
+            "tt49-2026-ung-dung-cong-nghe-ai"
+          ],
+          "evidence_markers": [
+            "15 tháng 08 năm 2026",
+            "30/2023/TT-BGDĐT"
+          ],
+          "naive_score": 2,
+          "content_score": 1,
+          "evidence_rank": 3,
+          "top3_previews": [
+            {
+              "rank": 1,
+              "score": 0.782,
+              "chunk_id": "tt49-2026-ung-dung-cong-nghe-ai#0",
+              "preview": "# Thông tư 49/2026/TT-BGDĐT — Ứng dụng công nghệ và AI trong giáo dục đại học Số: 49/2026/TT-BGDĐT — Hà Nội, ngày 30 tháng 06 năm 2026. Quy định ứng d"
+            },
+            {
+              "rank": 2,
+              "score": 0.692,
+              "chunk_id": "tt49-2026-ung-dung-cong-nghe-ai#30",
+              "preview": "n điện tử của các cơ sở giáo dục đại học, các trường cao đẳng sư phạm; Thông tư số 30/2023/TT-BGDĐT ngày 29 tháng 12 năm 2023 của Bộ trưởng Bộ Giáo dụ"
+            },
+            {
+              "rank": 3,
+              "score": 0.688,
+              "chunk_id": "tt49-2026-ung-dung-cong-nghe-ai#29",
+              "preview": "học thuật; trung thực trong học tập, giảng dạy, nghiên cứu khoa học và công bố việc sử dụng công nghệ, trí tuệ nhân tạo khi có yêu cầu. ## Điều 22. Đi"
+            }
+          ],
+          "agent_answer_logged": "Thông tư 49/2026/TT-BGDĐT có hiệu lực thi hành kể từ ngày 15 tháng 08 năm 2026 [3]. Thông tư này thay thế các thông tư sau: * Thông tư số 15/2018/TT-BGDĐT ngày 27 tháng 7 năm 2018 của Bộ trưởng Bộ Giáo dục và Đào tạo quy định tổ chức hoạt động, sử dụng thư điện tử và trang thông tin điện tử của các cơ sở giáo dục đại học, các trường cao đẳng sư phạm [2], [3]. * Thông tư số 30/2023/TT-BGDĐT ngày 29 tháng 12 năm 2023 của Bộ trưởng Bộ Giáo dục và Đào tạo quy định về ứng dụng công nghệ thông tin trong đào tạo trực tuyến đối với giáo dục đại học [2], [3]."
+        }
+      ]
+    },
+    {
+      "strategy": "recursive",
+      "label": "RecursiveChunker(chunk_size=500)",
+      "chunk_count": 161,
+      "avg_length": 393,
+      "min_length": 84,
+      "max_length": 500,
+      "content_score": 2,
+      "naive_score": 10,
+      "hit_at_3": 0.2,
+      "mrr_at_3": 0.2,
+      "queries": [
+        {
+          "id": "Q1",
+          "question": "Theo quy định của UEH, tỷ lệ tương đồng từ bao nhiêu phần trăm thì sản phẩm học thuật bị xem là có dấu hiệu đạo văn?",
+          "metadata_filter": null,
+          "gold_doc_ids": [
+            "ueh-dao-van-ai-quy-dinh-chung"
+          ],
+          "evidence_markers": [
+            "20% trở lên"
+          ],
+          "naive_score": 2,
+          "content_score": 0,
+          "evidence_rank": null,
+          "top3_previews": [
+            {
+              "rank": 1,
+              "score": 0.892,
+              "chunk_id": "ueh-dao-van-ai-quy-dinh-chung#4",
+              "preview": "Tỷ lệ tương đồng học thuật là tỷ lệ phần trăm nội dung trùng lặp trong sản phẩm học thuật được xác định bằng phần mềm hỗ trợ (Turnitin hoặc các công c"
+            },
+            {
+              "rank": 2,
+              "score": 0.867,
+              "chunk_id": "ueh-dao-van-ai-quy-dinh-chung#10",
+              "preview": "1. UEH sử dụng phần mềm Turnitin và/hoặc công cụ tương đương để phát hiện tỷ lệ tương đồng học thuật trong các sản phẩm học thuật. Kết quả tỷ lệ tương"
+            },
+            {
+              "rank": 3,
+              "score": 0.835,
+              "chunk_id": "ueh-dao-van-ai-quy-dinh-chung#3",
+              "preview": "Đạo văn là hành vi sử dụng trực tiếp hoặc gián tiếp, toàn bộ hoặc một phần ý tưởng, dữ liệu, ngôn từ, hình ảnh, mô hình, sản phẩm học thuật của người "
+            }
+          ],
+          "agent_answer_logged": "Theo quy định của UEH trong ngữ cảnh đã cho, không có thông tin nào nêu rõ tỷ lệ tương đồng từ bao nhiêu phần trăm thì sản phẩm học thuật bị xem là có dấu hiệu đạo văn. Ngữ cảnh chỉ ra rằng tỷ lệ tương đồng không phải là căn cứ duy nhất để kết luận đạo văn [1]. Kết quả tỷ lệ tương đồng chỉ mang tính tham khảo, hỗ trợ, không tự động kết luận là đạo văn [2]. Việc kết luận đạo văn dựa trên xem xét chuyên môn của đơn vị quản lý, giảng viên hoặc hội đồng có thẩm quyền [1] và dựa trên xem xét bối cảnh, phạm vi, tính chất nội dung trùng lặp, ý chí của người thực hiện và các chứng cứ liên quan [2]."
+        },
+        {
+          "id": "Q2",
+          "question": "Sản phẩm học thuật đã chỉnh sửa nhưng vẫn vi phạm lỗi đạo văn thì xử lý ra sao?",
+          "metadata_filter": {
+            "audience": "student"
+          },
+          "gold_doc_ids": [
+            "ueh-xu-ly-vi-pham-nguoi-hoc"
+          ],
+          "evidence_markers": [
+            "lập biên bản"
+          ],
+          "naive_score": 2,
+          "content_score": 2,
+          "evidence_rank": 1,
+          "top3_previews": [
+            {
+              "rank": 1,
+              "score": 0.817,
+              "chunk_id": "ueh-xu-ly-vi-pham-nguoi-hoc#2",
+              "preview": "a) Khi bị phát hiện vi phạm lần đầu, người học phải chỉnh sửa và nộp lại bài theo yêu cầu của giảng viên; b) Sau khi đã chỉnh sửa, người học nộp lại b"
+            },
+            {
+              "rank": 2,
+              "score": 0.8,
+              "chunk_id": "ueh-xu-ly-vi-pham-nguoi-hoc#1",
+              "preview": "Nếu Hội đồng đánh giá luận văn/luận án phát hiện hành vi đạo văn, chủ tịch hội đồng quyết định luận văn/luận án không đạt, người học phải chỉnh sửa lạ"
+            },
+            {
+              "rank": 3,
+              "score": 0.782,
+              "chunk_id": "ueh-xu-ly-vi-pham-nguoi-hoc#3",
+              "preview": "Người học phải chỉnh sửa và khắc phục vi phạm theo yêu cầu của giảng viên hướng dẫn hoặc đơn vị quản lý. b) Trong quá trình bảo vệ hoặc đánh giá: Nếu "
+            }
+          ],
+          "agent_answer_logged": "Sau khi đã chỉnh sửa, nếu người học nộp lại bài nhưng vẫn vi phạm lỗi đạo văn thì giảng viên phụ trách học phần sẽ lập biên bản/thông báo chuyển về đơn vị quản lý để xử lý tùy theo mức độ vi phạm quy định tại Phụ lục 3 [1]."
+        },
+        {
+          "id": "Q3",
+          "question": "Khi ghi nhận việc dùng công cụ AI trong bài làm, câu acknowledgement cần nêu những thông tin gì?",
+          "metadata_filter": null,
+          "gold_doc_ids": [
+            "rmit-ai-acknowledgement-guide"
+          ],
+          "evidence_markers": [
+            "the name of the AI tool and its creator"
+          ],
+          "naive_score": 2,
+          "content_score": 0,
+          "evidence_rank": null,
+          "top3_previews": [
+            {
+              "rank": 1,
+              "score": 0.843,
+              "chunk_id": "rmit-ai-acknowledgement-guide#1",
+              "preview": "In such cases, you will not include AI-generated content directly in your final work, e.g. you are using AI tools in the process of creating the work."
+            },
+            {
+              "rank": 2,
+              "score": 0.84,
+              "chunk_id": "ueh-dao-van-ai-quy-dinh-chung#16",
+              "preview": "- Minh bạch: ghi rõ công cụ AI tạo sinh đã sử dụng, mục đích sử dụng (tóm tắt, dịch thuật, tạo hình, viết mã v.v.) và những nội dung có sự hỗ trợ của "
+            },
+            {
+              "rank": 3,
+              "score": 0.834,
+              "chunk_id": "rmit-ai-acknowledgement-guide#5",
+              "preview": "Format for the acknowledgement (based on APA 7th, you may need to modify this for your referencing style): I used [tool used] (Creator, year) to [expl"
+            }
+          ],
+          "agent_answer_logged": "Khi ghi nhận việc dùng công cụ AI trong bài làm, câu acknowledgement cần nêu những thông tin sau: * Công cụ AI đã được sử dụng [1], [2], [3]. * Mục đích sử dụng công cụ AI (ví dụ: tóm tắt, dịch thuật, tạo hình, viết mã, cung cấp gợi ý chủ đề, cung cấp phản hồi về bản nháp) và cách thức công cụ đó được sử dụng [1], [2], [3]. * Những nội dung cụ thể trong sản phẩm học thuật có sự hỗ trợ của AI tạo sinh [2]. * Phiên bản của công cụ AI (nếu có) [2]. * Nhà sáng tạo (Creator) của công cụ AI [3]. * Năm (Year) của công cụ AI [3]."
+        },
+        {
+          "id": "Q4",
+          "question": "Những loại thông tin nào không được phép nhập vào công cụ AI tạo sinh?",
+          "metadata_filter": null,
+          "gold_doc_ids": [
+            "una-genai-policy-faculty",
+            "una-genai-policy-general"
+          ],
+          "evidence_markers": [
+            "Social Security numbers"
+          ],
+          "naive_score": 2,
+          "content_score": 0,
+          "evidence_rank": null,
+          "top3_previews": [
+            {
+              "rank": 1,
+              "score": 0.832,
+              "chunk_id": "una-genai-policy-faculty#10",
+              "preview": "### Information that may NOT be input into Generative AI tools: Personal, confidential, proprietary, or sensitive information that should not be publi"
+            },
+            {
+              "rank": 2,
+              "score": 0.832,
+              "chunk_id": "una-genai-policy-general#5",
+              "preview": "### Information that may NOT be input into Generative AI tools: Personal, confidential, proprietary, or sensitive information that should not be publi"
+            },
+            {
+              "rank": 3,
+              "score": 0.794,
+              "chunk_id": "una-genai-policy-faculty#13",
+              "preview": "- Passport or visa numbers - Copyrighted material unless you are the author and it does not require permission from your publisher ### Information whe"
+            }
+          ],
+          "agent_answer_logged": "Những loại thông tin không được phép nhập vào công cụ AI tạo sinh là thông tin cá nhân, bí mật, độc quyền hoặc nhạy cảm không nên được công bố hoặc tải lên [1, 2]. Các ví dụ bao gồm: * Số hộ chiếu hoặc visa [3] * Tài liệu có bản quyền trừ khi bạn là tác giả và không yêu cầu sự cho phép từ nhà xuất bản của bạn [3]"
+        },
+        {
+          "id": "Q5",
+          "question": "Thông tư 49/2026/TT-BGDĐT có hiệu lực từ ngày nào và thay thế những thông tư nào?",
+          "metadata_filter": null,
+          "gold_doc_ids": [
+            "tt49-2026-ung-dung-cong-nghe-ai"
+          ],
+          "evidence_markers": [
+            "15 tháng 08 năm 2026",
+            "30/2023/TT-BGDĐT"
+          ],
+          "naive_score": 2,
+          "content_score": 0,
+          "evidence_rank": null,
+          "top3_previews": [
+            {
+              "rank": 1,
+              "score": 0.787,
+              "chunk_id": "tt49-2026-ung-dung-cong-nghe-ai#0",
+              "preview": "# Thông tư 49/2026/TT-BGDĐT — Ứng dụng công nghệ và AI trong giáo dục đại học Số: 49/2026/TT-BGDĐT — Hà Nội, ngày 30 tháng 06 năm 2026. Quy định ứng d"
+            },
+            {
+              "rank": 2,
+              "score": 0.693,
+              "chunk_id": "tt49-2026-ung-dung-cong-nghe-ai#29",
+              "preview": "2. Thông tư số 15/2018/TT-BGDĐT ngày 27 tháng 7 năm 2018 của Bộ trưởng Bộ Giáo dục và Đào tạo quy định tổ chức hoạt động, sử dụng thư điện tử và trang"
+            },
+            {
+              "rank": 3,
+              "score": 0.682,
+              "chunk_id": "tt49-2026-ung-dung-cong-nghe-ai#1",
+              "preview": "Thông tư này quy định về ứng dụng công nghệ trong giáo dục đại học, giáo dục nghề nghiệp bao gồm: nguyên tắc, nội dung và điều kiện bảo đảm việc ứng d"
+            }
+          ],
+          "agent_answer_logged": "Thông tư 49/2026/TT-BGDĐT thay thế các thông tư sau: * Thông tư số 15/2018/TT-BGDĐT ngày 27 tháng 7 năm 2018 của Bộ trưởng Bộ Giáo dục và Đào tạo quy định tổ chức hoạt động, sử dụng thư điện tử và trang thông tin điện tử của các cơ sở giáo dục đại học, các trường cao đẳng sư phạm [2]. * Thông tư số 30/2023/TT-BGDĐT ngày 29 tháng 12 năm 2023 của Bộ trưởng Bộ Giáo dục và Đào tạo quy định về ứng dụng công nghệ thông tin trong đào tạo trực tuyến đối với giáo dục đại học [2]. Thông tin về ngày Thông tư 49/2026/TT-BGDĐT có hiệu lực thi hành không được tìm thấy trong ngữ cảnh [2]."
+        }
+      ]
+    },
+    {
+      "strategy": "heading",
+      "label": "HeadingChunker(max_chars=800) — custom, theo Điều/mục",
+      "chunk_count": 140,
+      "avg_length": 552,
+      "min_length": 158,
+      "max_length": 798,
+      "content_score": 6,
+      "naive_score": 10,
+      "hit_at_3": 0.8,
+      "mrr_at_3": 0.5666666666666667,
+      "queries": [
+        {
+          "id": "Q1",
+          "question": "Theo quy định của UEH, tỷ lệ tương đồng từ bao nhiêu phần trăm thì sản phẩm học thuật bị xem là có dấu hiệu đạo văn?",
+          "metadata_filter": null,
+          "gold_doc_ids": [
+            "ueh-dao-van-ai-quy-dinh-chung"
+          ],
+          "evidence_markers": [
+            "20% trở lên"
+          ],
+          "naive_score": 2,
+          "content_score": 1,
+          "evidence_rank": 3,
+          "top3_previews": [
+            {
+              "rank": 1,
+              "score": 0.886,
+              "chunk_id": "ueh-dao-van-ai-quy-dinh-chung#4",
+              "preview": "UEH — Quy định kiểm soát đạo văn và sử dụng AI: quy định chung > Điều 2. Nhận diện và xác định hành vi đạo văn > Tỷ lệ tương đồng học thuật Tỷ lệ tươn"
+            },
+            {
+              "rank": 2,
+              "score": 0.851,
+              "chunk_id": "ueh-dao-van-ai-quy-dinh-chung#8",
+              "preview": "UEH — Quy định kiểm soát đạo văn và sử dụng AI: quy định chung > Điều 3. Phát hiện và xử lý hành vi đạo văn 1. UEH sử dụng phần mềm Turnitin và/hoặc c"
+            },
+            {
+              "rank": 3,
+              "score": 0.846,
+              "chunk_id": "ueh-dao-van-ai-quy-dinh-chung#5",
+              "preview": "UEH — Quy định kiểm soát đạo văn và sử dụng AI: quy định chung > Điều 2. Nhận diện và xác định hành vi đạo văn > Các dấu hiệu của hành vi đạo văn hoặc"
+            }
+          ],
+          "agent_answer_logged": "Theo quy định của UEH, sản phẩm học thuật có thể xem là có dấu hiệu vi phạm (bao gồm đạo văn) nếu có tỷ lệ tương đồng từ 20% trở lên. Tỷ lệ này không tính các phần như trích dẫn, danh mục tài liệu tham khảo, phần mô tả phương pháp mang tính lặp lại và phổ biến trong chuyên ngành, các thuật ngữ chuyên ngành, tiêu chuẩn kỹ thuật, trích dẫn văn bản quy phạm pháp luật, tên riêng không thể thay thế [3]."
+        },
+        {
+          "id": "Q2",
+          "question": "Sản phẩm học thuật đã chỉnh sửa nhưng vẫn vi phạm lỗi đạo văn thì xử lý ra sao?",
+          "metadata_filter": {
+            "audience": "student"
+          },
+          "gold_doc_ids": [
+            "ueh-xu-ly-vi-pham-nguoi-hoc"
+          ],
+          "evidence_markers": [
+            "lập biên bản"
+          ],
+          "naive_score": 2,
+          "content_score": 2,
+          "evidence_rank": 1,
+          "top3_previews": [
+            {
+              "rank": 1,
+              "score": 0.789,
+              "chunk_id": "ueh-xu-ly-vi-pham-nguoi-hoc#2",
+              "preview": "UEH — Xử lý vi phạm đạo văn và sử dụng AI đối với người học > Điều 3. Xử lý hành vi đạo văn — áp dụng cho người học > 2.3 Đối với các bài kiểm tra, bà"
+            },
+            {
+              "rank": 2,
+              "score": 0.777,
+              "chunk_id": "ueh-xu-ly-vi-pham-nguoi-hoc#1",
+              "preview": "UEH — Xử lý vi phạm đạo văn và sử dụng AI đối với người học > Điều 3. Xử lý hành vi đạo văn — áp dụng cho người học > 2.2 Đối với khóa luận, đề án tốt"
+            },
+            {
+              "rank": 3,
+              "score": 0.753,
+              "chunk_id": "ueh-xu-ly-vi-pham-nguoi-hoc#4",
+              "preview": "UEH — Xử lý vi phạm đạo văn và sử dụng AI đối với người học > Điều 5. Xử lý vi phạm sử dụng AI trong học thuật — áp dụng cho người học > 2.2. Đối với "
+            }
+          ],
+          "agent_answer_logged": "Sau khi đã chỉnh sửa nhưng người học vẫn vi phạm lỗi đạo văn, giảng viên phụ trách học phần sẽ lập biên bản/thông báo chuyển về đơn vị quản lý để xử lý tùy theo mức độ vi phạm [1]."
+        },
+        {
+          "id": "Q3",
+          "question": "Khi ghi nhận việc dùng công cụ AI trong bài làm, câu acknowledgement cần nêu những thông tin gì?",
+          "metadata_filter": null,
+          "gold_doc_ids": [
+            "rmit-ai-acknowledgement-guide"
+          ],
+          "evidence_markers": [
+            "the name of the AI tool and its creator"
+          ],
+          "naive_score": 2,
+          "content_score": 2,
+          "evidence_rank": 1,
+          "top3_previews": [
+            {
+              "rank": 1,
+              "score": 0.833,
+              "chunk_id": "rmit-ai-acknowledgement-guide#3",
+              "preview": "RMIT Library — Acknowledging the use of AI tools (students) > Template for acknowledging the use of AI tools The advice below is based on the current "
+            },
+            {
+              "rank": 2,
+              "score": 0.815,
+              "chunk_id": "rmit-ai-acknowledgement-guide#1",
+              "preview": "RMIT Library — Acknowledging the use of AI tools (students) > Acknowledging the AI tools you have used For this type of AI use, however, you need to i"
+            },
+            {
+              "rank": 3,
+              "score": 0.8,
+              "chunk_id": "rmit-ai-acknowledgement-guide#4",
+              "preview": "RMIT Library — Acknowledging the use of AI tools (students) > Template for acknowledging the use of AI tools I used [tool used] (Creator, year) to [ex"
+            }
+          ],
+          "agent_answer_logged": "Khi ghi nhận việc dùng công cụ AI trong bài làm, câu acknowledgement cần nêu các thông tin sau: * Cách bạn đã sử dụng công cụ AI [1], [2] * Tên công cụ AI và nhà phát triển của nó [1], [3] * Năm nội dung AI được tạo bởi người dùng [1], [3]"
+        },
+        {
+          "id": "Q4",
+          "question": "Những loại thông tin nào không được phép nhập vào công cụ AI tạo sinh?",
+          "metadata_filter": null,
+          "gold_doc_ids": [
+            "una-genai-policy-faculty",
+            "una-genai-policy-general"
+          ],
+          "evidence_markers": [
+            "Social Security numbers"
+          ],
+          "naive_score": 2,
+          "content_score": 0,
+          "evidence_rank": null,
+          "top3_previews": [
+            {
+              "rank": 1,
+              "score": 0.788,
+              "chunk_id": "una-genai-policy-faculty#7",
+              "preview": "University of North Alabama — Generative AI Policy: faculty > Data Privacy and Security > Information that may NOT be input into Generative AI tools: "
+            },
+            {
+              "rank": 2,
+              "score": 0.788,
+              "chunk_id": "una-genai-policy-general#6",
+              "preview": "University of North Alabama — Generative AI Policy: general provisions and data privacy > Data Privacy and Security > Information that may NOT be inpu"
+            },
+            {
+              "rank": 3,
+              "score": 0.757,
+              "chunk_id": "ueh-dao-van-ai-quy-dinh-chung#16",
+              "preview": "UEH — Quy định kiểm soát đạo văn và sử dụng AI: quy định chung > Điều 4. Sử dụng AI trong học thuật h) Sử dụng AI để xử lý dữ liệu nhạy cảm bao gồm dữ"
+            }
+          ],
+          "agent_answer_logged": "Những loại thông tin không được phép nhập vào công cụ AI tạo sinh bao gồm: * Thông tin cá nhân, bảo mật, độc quyền hoặc nhạy cảm không nên được công bố hoặc tải lên [1, 2]. * Dữ liệu nhạy cảm, bao gồm dữ liệu cá nhân, dữ liệu tài chính, dữ liệu kinh doanh nội bộ, dữ liệu chưa công bố [3]. * Dữ liệu mà tác giả không có quyền cung cấp cho bên thứ ba hoặc sử dụng trái phép dữ liệu của người khác [3]."
+        },
+        {
+          "id": "Q5",
+          "question": "Thông tư 49/2026/TT-BGDĐT có hiệu lực từ ngày nào và thay thế những thông tư nào?",
+          "metadata_filter": null,
+          "gold_doc_ids": [
+            "tt49-2026-ung-dung-cong-nghe-ai"
+          ],
+          "evidence_markers": [
+            "15 tháng 08 năm 2026",
+            "30/2023/TT-BGDĐT"
+          ],
+          "naive_score": 2,
+          "content_score": 1,
+          "evidence_rank": 2,
+          "top3_previews": [
+            {
+              "rank": 1,
+              "score": 0.798,
+              "chunk_id": "tt49-2026-ung-dung-cong-nghe-ai#0",
+              "preview": "Thông tư 49/2026/TT-BGDĐT — Ứng dụng công nghệ và AI trong giáo dục đại học Số: 49/2026/TT-BGDĐT — Hà Nội, ngày 30 tháng 06 năm 2026. Quy định ứng dụn"
+            },
+            {
+              "rank": 2,
+              "score": 0.778,
+              "chunk_id": "tt49-2026-ung-dung-cong-nghe-ai#22",
+              "preview": "Thông tư 49/2026/TT-BGDĐT — Ứng dụng công nghệ và AI trong giáo dục đại học > Điều 22. Điều khoản thi hành 1. Thông tư này có hiệu lực thi hành kể từ "
+            },
+            {
+              "rank": 3,
+              "score": 0.727,
+              "chunk_id": "tt49-2026-ung-dung-cong-nghe-ai#1",
+              "preview": "Thông tư 49/2026/TT-BGDĐT — Ứng dụng công nghệ và AI trong giáo dục đại học > Điều 1. Phạm vi điều chỉnh Thông tư này quy định về ứng dụng công nghệ t"
+            }
+          ],
+          "agent_answer_logged": "Thông tư 49/2026/TT-BGDĐT có hiệu lực thi hành kể từ ngày 15 tháng 08 năm 2026 [2]. Thông tư này thay thế các thông tư sau đây từ ngày nó có hiệu lực: * Thông tư số 15/2018/TT-BGDĐT ngày 27 tháng 7 năm 2018 của Bộ trưởng Bộ Giáo dục và Đào tạo quy định tổ chức hoạt động, sử dụng thư điện tử và trang thông tin điện tử của các cơ sở giáo dục đại học, các trường cao đẳng sư phạm [2]. * Thông tư số 30/2023/TT-BGDĐT ngày 29 tháng 12 năm 2023 của Bộ trưởng Bộ Giáo dục và Đào tạo quy định về ứng dụng công nghệ thông tin trong đào tạo trực tuyến đối với giáo dục đại học [2]."
+        }
+      ]
+    }
+  ]
+}

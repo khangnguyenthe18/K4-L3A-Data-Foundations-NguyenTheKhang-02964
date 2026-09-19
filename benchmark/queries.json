@@ -1,0 +1,91 @@
+[
+  {
+    "id": "Q1",
+    "question": "Theo quy định của UEH, tỷ lệ tương đồng từ bao nhiêu phần trăm thì sản phẩm học thuật bị xem là có dấu hiệu đạo văn?",
+    "user_context": "Quy định UEH; phân biệt dấu hiệu và kết luận vi phạm.",
+    "metadata_filter": null,
+    "gold_answer": "Theo snapshot UEH, tỷ lệ tương đồng từ 20% trở lên là một dấu hiệu định lượng, sau khi loại các phần được miễn trừ nêu trong quy định; không tự động kết luận đạo văn chỉ từ tỷ lệ này.",
+    "evidence": [
+      {
+        "doc_id": "ueh-dao-van-ai-quy-dinh-chung",
+        "alternative_doc_ids": [],
+        "quote": "20% trở lên"
+      }
+    ],
+    "source_section": "Điều 2: Các dấu hiệu của hành vi đạo văn hoặc vi phạm liêm chính học thuật; đối chiếu Tỷ lệ tương đồng học thuật.",
+    "origin": "Exact question, filter, accepted documents and evidence markers from ket_qua_benchmark.txt"
+  },
+  {
+    "id": "Q2",
+    "question": "Sản phẩm học thuật đã chỉnh sửa nhưng vẫn vi phạm lỗi đạo văn thì xử lý ra sao?",
+    "user_context": "Người hỏi là sinh viên; câu hỏi nói về bài tập học phần. Truyền audience=student từ ngữ cảnh.",
+    "metadata_filter": {
+      "audience": "student"
+    },
+    "gold_answer": "Trong bối cảnh bài tập học phần của người học: giảng viên phụ trách lập biên bản/thông báo chuyển về đơn vị quản lý để xử lý tùy mức độ vi phạm quy định tại Phụ lục 3.",
+    "evidence": [
+      {
+        "doc_id": "ueh-xu-ly-vi-pham-nguoi-hoc",
+        "alternative_doc_ids": [],
+        "quote": "lập biên bản"
+      }
+    ],
+    "source_section": "Điều 3, mục 2.3(b): bài kiểm tra, bài tập, tiểu luận và các bài khác thuộc học phần.",
+    "origin": "Exact question, filter, accepted documents and evidence markers from ket_qua_benchmark.txt"
+  },
+  {
+    "id": "Q3",
+    "question": "Khi ghi nhận việc dùng công cụ AI trong bài làm, câu acknowledgement cần nêu những thông tin gì?",
+    "user_context": "Hỏi theo hướng dẫn RMIT Library; không trộn với hướng dẫn UEH.",
+    "metadata_filter": null,
+    "gold_answer": "Theo hướng dẫn RMIT Library: nêu cách sử dụng AI, tên công cụ và nhà phát triển, năm nội dung AI được người dùng tạo ra. Không bắt buộc phiên bản/ngày dùng trừ khi giảng viên yêu cầu.",
+    "evidence": [
+      {
+        "doc_id": "rmit-ai-acknowledgement-guide",
+        "alternative_doc_ids": [],
+        "quote": "the name of the AI tool and its creator"
+      }
+    ],
+    "source_section": "Template for acknowledging the use of AI tools.",
+    "origin": "Exact question, filter, accepted documents and evidence markers from ket_qua_benchmark.txt"
+  },
+  {
+    "id": "Q4",
+    "question": "Những loại thông tin nào không được phép nhập vào công cụ AI tạo sinh?",
+    "user_context": "Hỏi theo chính sách UNA. Social Security numbers là marker retrieval, không phải toàn bộ gold answer.",
+    "metadata_filter": null,
+    "gold_answer": "Theo snapshot UNA, không nhập thông tin cá nhân, bí mật, độc quyền hoặc nhạy cảm: ví dụ hồ sơ sinh viên/tuyển sinh, số an sinh xã hội, dữ liệu thẻ/ngân hàng, giấy tờ định danh, dữ liệu y tế/bảo hiểm, dữ liệu người tham gia nghiên cứu chưa được đồng ý công khai, hồ sơ nội bộ và nội dung thuộc NDA/sở hữu trí tuệ chưa được phép. Danh sách ví dụ không giới hạn ở một loại dữ liệu.",
+    "evidence": [
+      {
+        "doc_id": "una-genai-policy-faculty",
+        "alternative_doc_ids": [
+          "una-genai-policy-general"
+        ],
+        "quote": "Social Security numbers"
+      }
+    ],
+    "source_section": "Data Privacy and Security / Information that may NOT be input into Generative AI tools.",
+    "origin": "Exact question, filter, accepted documents and evidence markers from ket_qua_benchmark.txt"
+  },
+  {
+    "id": "Q5",
+    "question": "Thông tư 49/2026/TT-BGDĐT có hiệu lực từ ngày nào và thay thế những thông tư nào?",
+    "user_context": "Chỉ trả lời theo văn bản trong corpus; không coi kết quả là xác minh hiệu lực pháp lý.",
+    "metadata_filter": null,
+    "gold_answer": "Theo Điều 22 trong snapshot nhóm cung cấp: hiệu lực từ 15/08/2026; Thông tư 15/2018/TT-BGDĐT và 30/2023/TT-BGDĐT hết hiệu lực từ ngày đó. Đây là gold answer kiểm thử snapshot, chưa xác minh tình trạng pháp lý hiện hành.",
+    "evidence": [
+      {
+        "doc_id": "tt49-2026-ung-dung-cong-nghe-ai",
+        "alternative_doc_ids": [],
+        "quote": "15 tháng 08 năm 2026"
+      },
+      {
+        "doc_id": "tt49-2026-ung-dung-cong-nghe-ai",
+        "alternative_doc_ids": [],
+        "quote": "30/2023/TT-BGDĐT"
+      }
+    ],
+    "source_section": "Điều 22, khoản 1–2: Điều khoản thi hành.",
+    "origin": "Exact question, filter, accepted documents and evidence markers from ket_qua_benchmark.txt"
+  }
+]
